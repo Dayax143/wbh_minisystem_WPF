@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="LoraManage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PlatesManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserManage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="LoraManage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PlatesManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserManage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

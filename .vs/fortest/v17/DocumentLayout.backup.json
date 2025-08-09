@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "F:\\Software Development\\HWA DEV\\fortest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|f:\\software development\\hwa dev\\fortest\\usermanage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|solutionrelative:usermanage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|f:\\software development\\hwa dev\\fortest\\usermanage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|solutionrelative:usermanage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|f:\\software development\\hwa dev\\fortest\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|f:\\software development\\hwa dev\\fortest\\loramanage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|solutionrelative:loramanage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|f:\\software development\\hwa dev\\fortest\\platesmanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|solutionrelative:platesmanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{31CBF87E-7B4B-46BC-A1E5-06006DAEBD74}|fortest.csproj|f:\\software development\\hwa dev\\fortest\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,11 +34,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserManage.xaml.cs",
+              "DocumentMoniker": "F:\\Software Development\\HWA DEV\\fortest\\UserManage.xaml.cs",
+              "RelativeDocumentMoniker": "UserManage.xaml.cs",
+              "ToolTip": "F:\\Software Development\\HWA DEV\\fortest\\UserManage.xaml.cs",
+              "RelativeToolTip": "UserManage.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwBgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T08:38:22.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserManage.xaml",
+              "DocumentMoniker": "F:\\Software Development\\HWA DEV\\fortest\\UserManage.xaml",
+              "RelativeDocumentMoniker": "UserManage.xaml",
+              "ToolTip": "F:\\Software Development\\HWA DEV\\fortest\\UserManage.xaml",
+              "RelativeToolTip": "UserManage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-09T08:34:28.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoraManage.xaml",
+              "DocumentMoniker": "F:\\Software Development\\HWA DEV\\fortest\\LoraManage.xaml",
+              "RelativeDocumentMoniker": "LoraManage.xaml",
+              "ToolTip": "F:\\Software Development\\HWA DEV\\fortest\\LoraManage.xaml",
+              "RelativeToolTip": "LoraManage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-09T08:26:18.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlatesManagement.xaml",
+              "DocumentMoniker": "F:\\Software Development\\HWA DEV\\fortest\\PlatesManagement.xaml",
+              "RelativeDocumentMoniker": "PlatesManagement.xaml",
+              "ToolTip": "F:\\Software Development\\HWA DEV\\fortest\\PlatesManagement.xaml",
+              "RelativeToolTip": "PlatesManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-09T08:21:10.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "F:\\Software Development\\HWA DEV\\fortest\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -34,13 +99,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "F:\\Software Development\\HWA DEV\\fortest\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "F:\\Software Development\\HWA DEV\\fortest\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAMwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T05:37:08.761Z",
               "EditorCaption": ""
