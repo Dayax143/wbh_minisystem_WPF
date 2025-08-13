@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="fortest.LoraManage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:fortest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Foreground="#333333"
+    d:DesignWidth="1360" d:DesignHeight="768">
+    <Grid Background="#F4F4F4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" Background="#34495e" Padding="10">
+            <Grid>
+                <TextBlock Text="Welcome to Lora Reference Management" Foreground="White" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Content="Refresh" Background="#5cb85c" Foreground="White" Padding="10 5" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="0" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Margin="0 0 20 20">
+                    <TextBlock Text="Lora Reference" FontSize="16" FontWeight="Bold" Margin="0 0 0 10"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Lora_Id"/>
+                        <TextBox Grid.Row="0" Grid.Column="1"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Lora_Supply"/>
+                        <TextBox Grid.Row="1" Grid.Column="1"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Reference"/>
+                        <TextBox Grid.Row="2" Grid.Column="1"/>
+                        <CheckBox Grid.Row="2" Grid.Column="3" Content="Taken" VerticalAlignment="Center"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Serial"/>
+                        <TextBox Grid.Row="3" Grid.Column="1"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Content="RV"/>
+                        <TextBox Grid.Row="4" Grid.Column="1"/>
+                        <CheckBox Grid.Row="4" Grid.Column="3" Content="Plate" VerticalAlignment="Center"/>
+
+                        <Label Grid.Row="5" Grid.Column="0" Content="Note"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" Grid.RowSpan="2" Height="50" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Margin="10 0 0 20">
+                    <Button Content="New" Padding="10 5" Margin="0 0 0 5"/>
+                    <Button Content="Save" Padding="10 5" Margin="0 0 0 5"/>
+                    <Button Content="Update" Padding="10 5" Margin="0 0 0 5"/>
+                    <Button Content="Delete" Background="#d9534f" Foreground="White" Padding="10 5" Margin="0 0 0 5"/>
+                </StackPanel>
+
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10 0 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Search" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1"/>
+                    <Button Grid.Column="2" Content="Today" Padding="8 4" Margin="10 0 5 0"/>
+                    <Button Grid.Column="3" Content="Pending" Padding="8 4"/>
+                    <Button Grid.Column="5" Content="Report" Padding="10 5"/>
+                </Grid>
+
+                <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" AutoGenerateColumns="True" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="lora_id" Binding="{Binding lora_id}"/>
+                        <DataGridTextColumn Header="lor_supply" Binding="{Binding lor_supply}"/>
+                        <DataGridTextColumn Header="status" Binding="{Binding status}"/>
+                        <DataGridTextColumn Header="reference" Binding="{Binding reference}"/>
+                        <DataGridTextColumn Header="taken_date" Binding="{Binding taken_date}"/>
+                        <DataGridTextColumn Header="received_id" Binding="{Binding received_id}"/>
+                        <DataGridTextColumn Header="date" Binding="{Binding date}"/>
+                        <DataGridTextColumn Header="plate" Binding="{Binding plate}"/>
+                        <DataGridTextColumn Header="note" Binding="{Binding note}"/>
+                        <DataGridTextColumn Header="Users" Binding="{Binding Users}"/>
+                        <DataGridTextColumn Header="assigned_to" Binding="{Binding assigned_to}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

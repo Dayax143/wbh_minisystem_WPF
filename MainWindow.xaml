@@ -3,110 +3,67 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:fortest"
+        xmlns:UserControl="clr-namespace:fortest"
         mc:Ignorable="d"
-        Title="Dashboard" Height="768" Width="1366">
+        Title="Empowerment Interface" Height="539" Width="967"
+        Background="#F5F5F5"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
 
-    <Window.Resources>
-        <SolidColorBrush x:Key="PrimaryBlue" Color="#34495e"/>
-        <SolidColorBrush x:Key="SecondaryBlue" Color="#2c3e50"/>
-        <SolidColorBrush x:Key="AccentColor" Color="#3498db"/>
-        <SolidColorBrush x:Key="ButtonHoverColor" Color="#2980b9"/>
-        <SolidColorBrush x:Key="BackgroundColor" Color="#ecf0f1"/>
-        <SolidColorBrush x:Key="TextColor" Color="#34495e"/>
-        <SolidColorBrush x:Key="LightTextColor" Color="#ecf0f1"/>
+    <DockPanel>
+        <!-- 🔹 Top Header -->
+        <Border DockPanel.Dock="Top" Background="#2C3E50" Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-        <Style x:Key="NavButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource SecondaryBlue}"/>
-            <Setter Property="Foreground" Value="{StaticResource LightTextColor}"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="Padding" Value="15,10"/>
-            <Setter Property="Margin" Value="0,2,0,2"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource ButtonHoverColor}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="{StaticResource AccentColor}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                    <TextBlock Text="Welcome"
+                               FontSize="16" Foreground="White"
+                               VerticalAlignment="Center" Name="Welcome"/>
+                    <TextBlock Text=" Username"
+                               FontSize="16" Foreground="White"
+                               VerticalAlignment="Center" Name="welcomeLabel"/>
+                </StackPanel>
 
-        <Style x:Key="ActionButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource AccentColor}"/>
-            <Setter Property="Foreground" Value="{StaticResource LightTextColor}"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource ButtonHoverColor}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="{StaticResource PrimaryBlue}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-
-    <Grid Background="{StaticResource BackgroundColor}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Border Grid.ColumnSpan="2" Background="{StaticResource PrimaryBlue}">
-            <Grid Margin="15,0">
-                <TextBlock Text="Dashboard" Foreground="{StaticResource LightTextColor}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold"/>
-                <TextBlock Text="HWA Kempower Interfaces" Foreground="{StaticResource LightTextColor}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="SemiBold"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBlock Text="07/30/2025 5:38:01 AM" Foreground="{StaticResource LightTextColor}" VerticalAlignment="Center" Margin="0,0,20,0"/>
-                    <Button Content="Logout" Style="{StaticResource ActionButtonStyle}" Background="#e74c3c" Width="80"/>
+                <!-- Buttons on the right -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button Content="Change Password"
+                            Margin="0,0,10,0"
+                            Width="140" Height="36"
+                            Background="#9E9E9E" Foreground="White" BorderBrush="#9E9E9E" />
+                    <Button Content="Logout"
+                            Width="80" Height="36"
+                            Background="#E74C3C" Foreground="White" BorderBrush="#E74C3C" />
                 </StackPanel>
             </Grid>
         </Border>
 
-        <Border Grid.Row="1" Background="{StaticResource SecondaryBlue}">
-            <StackPanel Margin="0,15,0,0">
-                <Button Content="Dashboard" Style="{StaticResource NavButtonStyle}"/>
-                <Button Content="Lora" Style="{StaticResource NavButtonStyle}"/>
-                <Button Content="Plates" Style="{StaticResource NavButtonStyle}"/>
-                <Button Content="Settings" Style="{StaticResource NavButtonStyle}"/>
-                <Button Content="Manage users" Style="{StaticResource NavButtonStyle}"/>
-                <Button Content="About" Style="{StaticResource NavButtonStyle}"/>
-            </StackPanel>
-        </Border>
+        <!-- 🔹 Left Menu -->
+        <StackPanel DockPanel.Dock="Left"
+                    Width="180"
+                    Background="#34495E"
+                    VerticalAlignment="Stretch">
+            <Button Content="Dashboard" Foreground="White" Background="Transparent" Name="btnDashboard"
+                    Margin="0,5,0,5" Padding="10" HorizontalContentAlignment="Left" />
+            <Button Content="Tasks" Foreground="White" Background="Transparent" Name="btnTasks"
+                    Margin="0,5,0,5" Padding="10" HorizontalContentAlignment="Left" Click="btnTasks_Click" />
+            <Button Content="Plates" Foreground="White" Background="Transparent" Name="btnPlates"
+                    Margin="0,5,0,5" Padding="10" HorizontalContentAlignment="Left" Click="btnPlates_Click" />
+            <Button Content="About" Foreground="White" Background="Transparent"
+                    Margin="0,5,0,5" Padding="10" HorizontalContentAlignment="Left" Name="btnAbout" />
+            <Button Content="Manage Users" Foreground="White" Background="Transparent" Name="btnManageUsers"
+                    Margin="0,5,0,5" Padding="10" HorizontalContentAlignment="Left" Click="btnManageUsers_Click"/>
+        </StackPanel>
 
-        <Border Grid.Column="1" Grid.Row="1" Background="White" Margin="20" CornerRadius="8" Padding="20">
-            <Grid Name="mainPanel">
-                
-            </Grid>
-        </Border>
-    </Grid>
+        <!-- 🔹 Main Content Area -->
+        <Grid Name="mainGrid">
+
+        </Grid>
+
+    </DockPanel>
 </Window>
+

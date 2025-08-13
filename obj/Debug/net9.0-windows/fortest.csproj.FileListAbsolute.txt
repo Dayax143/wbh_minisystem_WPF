@@ -19,9 +19,9 @@ F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\fortest.pdb
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\fortest.genruntimeconfig.cache
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\ref\fortest.dll
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\fortest.sourcelink.json
-F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\LoraManage.baml
-F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\PlatesManagement.baml
-F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\UserManage.baml
-F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\LoraManage.g.cs
-F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\PlatesManagement.g.cs
-F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\UserManage.g.cs
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\Lora\LoraManage.baml
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\Plates\PlatesManagement.baml
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\User\UserManage.baml
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\Lora\LoraManage.g.cs
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\Plates\PlatesManagement.g.cs
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\User\UserManage.g.cs

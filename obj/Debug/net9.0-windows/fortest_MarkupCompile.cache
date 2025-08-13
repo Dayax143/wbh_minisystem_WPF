@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP
 F:\Software Development\HWA DEV\fortest\App.xaml
-4423727572
+42055915386
 
-7550374588
+71122679954
 200-1310591092
-LoraManage.xaml;MainWindow.xaml;PlatesManagement.xaml;UserManage.xaml;
+Lora\LoraManage.xaml;MainWindow.xaml;Plates\PlatesManagement.xaml;User\UserManage.xaml;
 
 False
 
