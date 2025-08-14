@@ -49,7 +49,7 @@
                     VerticalAlignment="Stretch">
             <Button Content="Dashboard" Foreground="White" Background="Transparent" Name="btnDashboard"
                     Margin="0,5,0,5" Padding="10" HorizontalContentAlignment="Left" />
-            <Button Content="Tasks" Foreground="White" Background="Transparent" Name="btnTasks"
+            <Button Content="Loras" Foreground="White" Background="Transparent" Name="btnTasks"
                     Margin="0,5,0,5" Padding="10" HorizontalContentAlignment="Left" Click="btnTasks_Click" />
             <Button Content="Plates" Foreground="White" Background="Transparent" Name="btnPlates"
                     Margin="0,5,0,5" Padding="10" HorizontalContentAlignment="Left" Click="btnPlates_Click" />

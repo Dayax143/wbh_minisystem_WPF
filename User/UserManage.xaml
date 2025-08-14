@@ -1,68 +1,73 @@
 ﻿<UserControl x:Class="fortest.UserManage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:fortest"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Foreground="#333333"
-    d:DesignWidth="1360" d:DesignHeight="768">
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:fortest"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1100" Loaded="UserControl_Loaded">
 
-    <DockPanel Background="#F5F5F5" Margin="0,0,-27,0">
+    <UserControl.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
 
-        <StackPanel DockPanel.Dock="Top" Margin="16" Orientation="Vertical">
-            <TextBlock Text="Task Management" FontSize="28" FontWeight="Bold" Margin="0,0,0,16" Foreground="#333333"/>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
 
-            <!-- Combined Grid for all filters -->
-            <Grid Margin="0,0,0,16">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+        <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
 
-                <!-- Name/Phone Filter (Row 0) -->
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Filter by name/phone:" VerticalAlignment="Center" FontSize="16" Margin="0,0,8,8" Foreground="#333333"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Name="txtContact" Height="36" Margin="0,0,9,8" Background="White" BorderBrush="#CCCCCC" Padding="4"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="Add Task" Width="110" Height="36" HorizontalAlignment="Left" Margin="0,0,8,8" Background="#4CAF50" Foreground="White" BorderBrush="#4CAF50"/>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="5,10,5,5"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </UserControl.Resources>
 
-                <!-- Date Filter (Row 1) -->
-                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="0,8,0,8" VerticalAlignment="Center">
-                    <CheckBox x:Name="chkEnableDateFilter" Content="Enable Date Filter" VerticalAlignment="Center" Margin="0,0,16,0" FontSize="16" Foreground="#333333"/>
-                    <TextBlock Text="From:" FontSize="16" VerticalAlignment="Center" Margin="0,0,8,0" Foreground="#333333"/>
-                    <DatePicker Width="120" Height="36" Margin="0,0,8,0" Name="dtpickerstart" Background="White" BorderBrush="#CCCCCC"/>
-                    <TextBlock Text="To:" FontSize="16" VerticalAlignment="Center" Margin="0,0,8,0" Foreground="#333333"/>
-                    <DatePicker Width="120" Height="36" Margin="0,0,8,0" Name="dtpickerend" Background="White" BorderBrush="#CCCCCC"/>
-                    <Button Content="Apply Filter" Width="120" Height="36" Name="btnFilterByDate" Margin="16,0,8,0" Background="#2196F3" Foreground="White" BorderBrush="#2196F3"/>
-                    <Button Content="Clear Filters" Width="120" Height="36" Name="btnClearFilters" Background="#9E9E9E" Foreground="White" BorderBrush="#9E9E9E"/>
-                </StackPanel>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-                <!-- Prepared Filters (Row 2) -->
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Prepared Filters:" VerticalAlignment="Center" FontSize="16" Margin="0,0,8,0" Foreground="#333333"/>
-                <ComboBox Grid.Row="2" Grid.Column="1" x:Name="filterComboBox" Height="36" Margin="0,0,9,0" Background="White" BorderBrush="#CCCCCC">
-                    <ComboBoxItem Content=""/>
-                    <ComboBoxItem Content="Pending"/>
-                    <ComboBoxItem Content="Completed"/>
-                </ComboBox>
-            </Grid>
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Welcome to User Management" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button Content="Refresh" Grid.Column="1" HorizontalAlignment="Right" Margin="10" Style="{StaticResource ButtonStyle}"/>
+        </Grid>
 
-        </StackPanel>
 
-        <DataGrid Name="dgvTasks" 
-                  Margin="16"
-                  HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch"
-                  ColumnWidth="*"
-                  Background="White"
-                  BorderBrush="#CCCCCC"
-                  HeadersVisibility="Column"
-                  GridLinesVisibility="Horizontal"
-                  AlternatingRowBackground="#F0F0F0">
-        </DataGrid>
-    </DockPanel>
+        <!-- Data Grid and Search Section -->
+        <Grid Grid.Row="2" Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="Search" FontSize="14" VerticalAlignment="Center"/>
+                <TextBox Width="200" Style="{StaticResource TextBoxStyle}"/>
+            </StackPanel>
+
+            <DataGrid Grid.Row="1" Margin="0,10,0,0" AutoGenerateColumns="True" Name="dgvUsers">
+                <!-- DataGrid columns would be defined here -->
+            </DataGrid>
+        </Grid>
+    </Grid>
 </UserControl>
+

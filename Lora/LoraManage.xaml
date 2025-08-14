@@ -5,87 +5,123 @@
     xmlns:local="clr-namespace:fortest"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Foreground="#333333"
-    d:DesignWidth="1360" d:DesignHeight="768">
+    d:DesignWidth="1360" d:DesignHeight="768" Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <!-- Consistent colors from the main dashboard -->
+        <SolidColorBrush x:Key="PrimaryBlue" Color="#34495e"/>
+        <SolidColorBrush x:Key="SecondaryBlue" Color="#2c3e50"/>
+        <SolidColorBrush x:Key="AccentColor" Color="#3498db"/>
+        <SolidColorBrush x:Key="ButtonHoverColor" Color="#2980b9"/>
+        <SolidColorBrush x:Key="BackgroundColor" Color="#ecf0f1"/>
+        <SolidColorBrush x:Key="TextColor" Color="#34495e"/>
+        <SolidColorBrush x:Key="LightTextColor" Color="#ecf0f1"/>
+
+        <!-- A generic style for Labels to ensure consistency -->
+        <Style x:Key="FormLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,5"/>
+        </Style>
+
+        <!-- A style for TextBoxes and other input fields -->
+        <Style x:Key="InputStyle" TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <!-- A consistent style for action buttons -->
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="{StaticResource LightTextColor}"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="3" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ButtonHoverColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="{StaticResource AccentColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style for the Report button -->
+        <Style x:Key="ReportButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBlue}"/>
+        </Style>
+
+        <!-- Style for the Refresh button -->
+        <Style x:Key="RefreshButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="#5cb85c"/>
+            <!-- Success green color -->
+        </Style>
+
+        <!-- Style for the Delete button -->
+        <Style x:Key="DeleteButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="#d9534f"/>
+            <!-- Danger red color -->
+            <Setter Property="Margin" Value="0,15,0,5"/>
+        </Style>
+
+        <!-- Style for the search buttons (Today, Pending) -->
+        <Style x:Key="SearchButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource SecondaryBlue}"/>
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+
+    </UserControl.Resources>
+
     <Grid Background="#F4F4F4">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="0" Grid.Column="0" Background="#34495e" Padding="10">
+        <!-- Main Header -->
+        <Border Grid.Row="0" Background="{StaticResource PrimaryBlue}" Padding="15">
             <Grid>
-                <TextBlock Text="Welcome to Lora Reference Management" Foreground="White" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Content="Refresh" Background="#5cb85c" Foreground="White" Padding="10 5" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Welcome to Lora Reference Management" Foreground="{StaticResource LightTextColor}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+                <Button Content="Refresh" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource RefreshButtonStyle}"/>
             </Grid>
         </Border>
 
-        <Border Grid.Row="1" Grid.Column="0" Padding="20">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+        <!-- Main Content Area -->
+        <Grid Grid.Row="1" Margin="20" Background="White" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+          
+            <!-- Right Panel - Search and DataGrid -->
+            <Grid Grid.Column="1" Margin="10,0,0,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" Grid.Column="0" Margin="0 0 20 20">
-                    <TextBlock Text="Lora Reference" FontSize="16" FontWeight="Bold" Margin="0 0 0 10"/>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <Label Grid.Row="0" Grid.Column="0" Content="Lora_Id"/>
-                        <TextBox Grid.Row="0" Grid.Column="1"/>
-
-                        <Label Grid.Row="1" Grid.Column="0" Content="Lora_Supply"/>
-                        <TextBox Grid.Row="1" Grid.Column="1"/>
-
-                        <Label Grid.Row="2" Grid.Column="0" Content="Reference"/>
-                        <TextBox Grid.Row="2" Grid.Column="1"/>
-                        <CheckBox Grid.Row="2" Grid.Column="3" Content="Taken" VerticalAlignment="Center"/>
-
-                        <Label Grid.Row="3" Grid.Column="0" Content="Serial"/>
-                        <TextBox Grid.Row="3" Grid.Column="1"/>
-
-                        <Label Grid.Row="4" Grid.Column="0" Content="RV"/>
-                        <TextBox Grid.Row="4" Grid.Column="1"/>
-                        <CheckBox Grid.Row="4" Grid.Column="3" Content="Plate" VerticalAlignment="Center"/>
-
-                        <Label Grid.Row="5" Grid.Column="0" Content="Note"/>
-                        <TextBox Grid.Row="5" Grid.Column="1" Grid.RowSpan="2" Height="50" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
-                    </Grid>
-                </StackPanel>
-
-                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Margin="10 0 0 20">
-                    <Button Content="New" Padding="10 5" Margin="0 0 0 5"/>
-                    <Button Content="Save" Padding="10 5" Margin="0 0 0 5"/>
-                    <Button Content="Update" Padding="10 5" Margin="0 0 0 5"/>
-                    <Button Content="Delete" Background="#d9534f" Foreground="White" Padding="10 5" Margin="0 0 0 5"/>
-                </StackPanel>
-
-                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10 0 10">
+                <!-- Search and Filter Bar -->
+                <Grid Grid.Row="0" Margin="0,0,0,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="200"/>
@@ -94,29 +130,19 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Content="Search" VerticalAlignment="Center"/>
-                    <TextBox Grid.Column="1"/>
-                    <Button Grid.Column="2" Content="Today" Padding="8 4" Margin="10 0 5 0"/>
-                    <Button Grid.Column="3" Content="Pending" Padding="8 4"/>
-                    <Button Grid.Column="5" Content="Report" Padding="10 5"/>
+                    <Label Grid.Column="0" Content="Search" VerticalAlignment="Center" FontSize="14"/>
+                    <TextBox Grid.Column="1" Style="{StaticResource InputStyle}"/>
+                    <Button Grid.Column="2" Content="Today" Style="{StaticResource SearchButtonStyle}"/>
+                    <Button Grid.Column="3" Content="Pending" Style="{StaticResource SearchButtonStyle}"/>
+                    <Button Grid.Column="5" Content="Report" Style="{StaticResource ReportButtonStyle}"/>
                 </Grid>
 
-                <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" AutoGenerateColumns="True" IsReadOnly="True">
+                <!-- DataGrid -->
+                <DataGrid Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding}" AutoGenerateColumns="True" Name="dgvLora">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="lora_id" Binding="{Binding lora_id}"/>
-                        <DataGridTextColumn Header="lor_supply" Binding="{Binding lor_supply}"/>
-                        <DataGridTextColumn Header="status" Binding="{Binding status}"/>
-                        <DataGridTextColumn Header="reference" Binding="{Binding reference}"/>
-                        <DataGridTextColumn Header="taken_date" Binding="{Binding taken_date}"/>
-                        <DataGridTextColumn Header="received_id" Binding="{Binding received_id}"/>
-                        <DataGridTextColumn Header="date" Binding="{Binding date}"/>
-                        <DataGridTextColumn Header="plate" Binding="{Binding plate}"/>
-                        <DataGridTextColumn Header="note" Binding="{Binding note}"/>
-                        <DataGridTextColumn Header="Users" Binding="{Binding Users}"/>
-                        <DataGridTextColumn Header="assigned_to" Binding="{Binding assigned_to}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-        </Border>
+        </Grid>
     </Grid>
 </UserControl>

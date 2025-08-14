@@ -1,0 +1,52 @@
+﻿<Window x:Class="fortest.User.RegUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fortest.User"
+        mc:Ignorable="d"
+        Title="RegUser" Height="450" Width="800">
+
+    <!-- Input Section -->
+    <Grid Grid.Row="1" Margin="20,0,20,20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- User Info Section -->
+        <Label Grid.Row="0" Grid.Column="0" Content="Username" />
+        <TextBox Grid.Row="0" Grid.Column="1" />
+
+        <Label Grid.Row="0" Grid.Column="2" Content="Usertype" />
+        <ComboBox Grid.Row="0" Grid.Column="3" />
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Password" />
+        <TextBox Grid.Row="1" Grid.Column="1" />
+
+        <Label Grid.Row="1" Grid.Column="2" Content="User status" />
+        <ComboBox Grid.Row="1" Grid.Column="3" />
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Recovery question" />
+        <TextBox Grid.Row="2" Grid.Column="1" />
+
+        <Label Grid.Row="2" Grid.Column="2" Content="Recovery answer" />
+        <ComboBox Grid.Row="2" Grid.Column="3" />
+
+        <!-- Action Buttons -->
+        <StackPanel Grid.Row="0" Grid.Column="4" Orientation="Vertical" VerticalAlignment="Top">
+            <Button Content="Save" />
+            <Button Content="Update" />
+            <Button Content="Delete" />
+        </StackPanel>
+    </Grid>
+</Window>
