@@ -153,3 +153,12 @@ F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\User\RegUser.g.
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\Lora\RegLora.baml
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\Plates\RegPlate.baml
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\User\RegUser.baml
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\Lora\EditLora.g.cs
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\Lora\EditLora.baml
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\User\RegSignup.g.cs
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\winConfig.g.cs
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\winLogin.g.cs
+F:\Software Development\HWA DEV\fortest\bin\Debug\net9.0-windows\fortest.dll.config
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\User\RegSignup.baml
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\winConfig.baml
+F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\winLogin.baml

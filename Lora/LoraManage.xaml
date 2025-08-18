@@ -8,7 +8,6 @@
     d:DesignWidth="1360" d:DesignHeight="768" Loaded="UserControl_Loaded">
 
     <UserControl.Resources>
-        <!-- Consistent colors from the main dashboard -->
         <SolidColorBrush x:Key="PrimaryBlue" Color="#34495e"/>
         <SolidColorBrush x:Key="SecondaryBlue" Color="#2c3e50"/>
         <SolidColorBrush x:Key="AccentColor" Color="#3498db"/>
@@ -17,14 +16,12 @@
         <SolidColorBrush x:Key="TextColor" Color="#34495e"/>
         <SolidColorBrush x:Key="LightTextColor" Color="#ecf0f1"/>
 
-        <!-- A generic style for Labels to ensure consistency -->
         <Style x:Key="FormLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,5"/>
         </Style>
 
-        <!-- A style for TextBoxes and other input fields -->
         <Style x:Key="InputStyle" TargetType="TextBox">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="5"/>
@@ -36,7 +33,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
-        <!-- A consistent style for action buttons -->
         <Style x:Key="ActionButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="{StaticResource LightTextColor}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -62,28 +58,41 @@
             </Setter>
         </Style>
 
-        <!-- Style for the Report button -->
         <Style x:Key="ReportButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource PrimaryBlue}"/>
         </Style>
 
-        <!-- Style for the Refresh button -->
         <Style x:Key="RefreshButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
             <Setter Property="Background" Value="#5cb85c"/>
-            <!-- Success green color -->
         </Style>
 
-        <!-- Style for the Delete button -->
         <Style x:Key="DeleteButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
             <Setter Property="Background" Value="#d9534f"/>
-            <!-- Danger red color -->
             <Setter Property="Margin" Value="0,15,0,5"/>
         </Style>
 
-        <!-- Style for the search buttons (Today, Pending) -->
         <Style x:Key="SearchButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource SecondaryBlue}"/>
             <Setter Property="Margin" Value="5,0"/>
+        </Style>
+
+        <Style x:Key="AddNewButtonStyle" BasedOn="{StaticResource ActionButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource AccentColor}"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+        </Style>
+
+        <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="120"/>
+        </Style>
+
+        <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="120"/>
         </Style>
 
     </UserControl.Resources>
@@ -94,7 +103,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Main Header -->
         <Border Grid.Row="0" Background="{StaticResource PrimaryBlue}" Padding="15">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -106,43 +114,38 @@
             </Grid>
         </Border>
 
-        <!-- Main Content Area -->
         <Grid Grid.Row="1" Margin="20" Background="White" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-          
-            <!-- Right Panel - Search and DataGrid -->
-            <Grid Grid.Column="1" Margin="10,0,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Header="Filter and Actions" Margin="0,0,0,10" Padding="10" FontWeight="SemiBold" FontSize="16">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Label Content="Search" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Style="{StaticResource InputStyle}" Width="200" x:Name="txtSearch"/>
 
-                <!-- Search and Filter Bar -->
-                <Grid Grid.Row="0" Margin="0,0,0,10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Content="Search" VerticalAlignment="Center" FontSize="14"/>
-                    <TextBox Grid.Column="1" Style="{StaticResource InputStyle}"/>
-                    <Button Grid.Column="2" Content="Today" Style="{StaticResource SearchButtonStyle}"/>
-                    <Button Grid.Column="3" Content="Pending" Style="{StaticResource SearchButtonStyle}"/>
-                    <Button Grid.Column="5" Content="Report" Style="{StaticResource ReportButtonStyle}"/>
-                </Grid>
+                    <Label Content="Filter By:" Style="{StaticResource FormLabelStyle}"/>
+                    <ComboBox Style="{StaticResource ComboBoxStyle}" x:Name="cmbFilter1" SelectionChanged="cmbFilter1_SelectionChanged">
+                        <ComboBoxItem Content="Pending"/>
+                        <ComboBoxItem Content="Taken"/>
+                        <ComboBoxItem Content="Repeated"/>
+                        <ComboBoxItem Content=" "/>
+                    </ComboBox>
 
-                <!-- DataGrid -->
-                <DataGrid Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding}" AutoGenerateColumns="True" Name="dgvLora">
-                    <DataGrid.Columns>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
+                    <Label Content="Start Date:" Style="{StaticResource FormLabelStyle}"/>
+                    <DatePicker Style="{StaticResource DatePickerStyle}" x:Name="dpStartDate"/>
+                    <Label Content="End Date:" Style="{StaticResource FormLabelStyle}"/>
+                    <DatePicker Style="{StaticResource DatePickerStyle}" x:Name="dpEndDate"/>
+
+                    <Button Content="Today" Style="{StaticResource SearchButtonStyle}" x:Name="btnToday"/>
+                    <Button Content="Pending" Style="{StaticResource SearchButtonStyle}" x:Name="btnPending"/>
+                    <Button Content="Report" Style="{StaticResource ReportButtonStyle}" x:Name="btnReport" Click="btnReport_Click"/>
+                    <Button Content="Add New Lora" Style="{StaticResource AddNewButtonStyle}" x:Name="btnAddNewLora" Click="btnAddNewLora_Click"/>
+                </StackPanel>
+            </GroupBox>
+
+            <DataGrid Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding}" AutoGenerateColumns="True" Name="dgvLora"/>
         </Grid>
     </Grid>
 </UserControl>

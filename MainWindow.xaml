@@ -37,7 +37,7 @@
                             Background="#9E9E9E" Foreground="White" BorderBrush="#9E9E9E" />
                     <Button Content="Logout"
                             Width="80" Height="36"
-                            Background="#E74C3C" Foreground="White" BorderBrush="#E74C3C" />
+                            Background="#E74C3C" Foreground="White" BorderBrush="#E74C3C" Click="Button_Click_1" />
                 </StackPanel>
             </Grid>
         </Border>

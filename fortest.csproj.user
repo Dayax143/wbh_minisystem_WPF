@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Lora\EditLora.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Lora\LoraManage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +30,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Lora\EditLora.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Lora\LoraManage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -42,10 +48,19 @@
     <Page Update="Plates\RegPlate.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="User\RegSignup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="User\RegUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="User\UserManage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="winConfig.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="winLogin.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

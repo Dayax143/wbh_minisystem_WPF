@@ -119,5 +119,24 @@ namespace fortest
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                winLogin login = new winLogin();
+                login.Show();
+                this.Close(); // Close the current window
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

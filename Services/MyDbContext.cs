@@ -11,21 +11,21 @@ namespace fortest.Services
 {
     public class MyDbContext: DbContext
     {
-      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //"Server=172.16.168.212;Database=wbh_minisystem;User Id=sa;Password=123; trustservercertificate=true;"
+        string connectionString = Properties.Settings.Default.ConnectionString;
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Use your actual connection string here
-            optionsBuilder.UseSqlServer("Server=172.16.168.212;Database=wbh_minisystem;User Id=sa;Password=123; trustservercertificate=true;");
+            optionsBuilder.UseSqlServer(connectionString);
         }
-
 
         public DbSet<tblLora> tblLora { get; set; } 
         public DbSet<TblPlate> tblPlates { get; set; }
-
-        public DbSet<TblRfm> TblRfms { get; set; } 
-
+        public DbSet<TblRfm> TblRfms { get; set; }
         public DbSet<TblUser> TblUser { get; set; }
-
         public DbSet<Test> Tests { get; set; }
+
+        public DbSet<NewTable> new_table { get; set; }
 
     }
 }

@@ -11,6 +11,10 @@ public partial class TblUser
     [Column("user_id")]
     public int user_id { get; set; }
 
+    [Column("fullname")]
+    [StringLength(100)]
+    public string? fullname { get; set; }
+
     [Column("userName")]
     [StringLength(20)]
     public string? userName { get; set; }
