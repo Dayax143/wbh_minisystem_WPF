@@ -11,9 +11,10 @@ namespace fortest.Services
 {
     public class MyDbContext: DbContext
     {
-        //"Server=172.16.168.212;Database=wbh_minisystem;User Id=sa;Password=123; trustservercertificate=true;"
-        string connectionString = Properties.Settings.Default.ConnectionString;
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+        string connectionString = "Server=rt\\rtser22;Database=wbh_minisystem;User Id=sa;Password=123; trustservercertificate=true;";
+		//string connectionString = Properties.Settings.Default.ConnectionString;
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Use your actual connection string here
             optionsBuilder.UseSqlServer(connectionString);
