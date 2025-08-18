@@ -32,4 +32,12 @@ public partial class TblPlate
     [Column("note")]
     [StringLength(100)]
     public string? note { get; set; }
+
+    [Column("ref_user")]
+    [StringLength(100)]
+    public string? ref_user { get; set; }
+
+    [Column("if_deleted ")]
+    [StringLength(10)]
+    public string? if_deleted { get; set; }
 }

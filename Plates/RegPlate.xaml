@@ -60,7 +60,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
-            <Button Content="Save" Margin="5" Width="100"/>
+            <Button Content="Save" Margin="5" Width="100" Click="Button_Click"/>
             <Button Content="Update" Margin="5" Width="100"/>
             <Button Content="Delete" Margin="5" Width="100" Background="#FF6347" Foreground="White"/>
             <Button Content="New" Margin="5" Width="100"/>

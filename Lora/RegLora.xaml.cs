@@ -1,4 +1,5 @@
 ﻿using fortest.Models;
+using fortest.Properties;
 using fortest.Services;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,8 @@ namespace fortest.Lora
                             receipt_rv = txtRv.Text, // Assuming txtRv is a TextBox for receipt RV input
                             note = txtNote.Text // Assuming txtNote is a TextBox for notes input,
                             ,
+                            ref_user = Settings.Default.audit_user,
+                            if_deleted = "Never", // Assuming this is a default value for new records
                         };
                         // Simplified conditional logic
                         if (chbPlate.IsChecked==true)
@@ -65,7 +68,11 @@ namespace fortest.Lora
                                 cor_supply = txtSupply.Text,
                                 status = status,
                                 refference = txtRefference.Text,
-                                date = DateTime.Now
+                                date = DateTime.Now,
+                                note = txtNote.Text // Assuming txtNote is a TextBox for notes input
+                                ,
+                                ref_user = Settings.Default.audit_user,
+                                if_deleted = "Never",
                             };
                             context.tblPlates.Add(newPlate);
                         }
@@ -136,12 +143,16 @@ namespace fortest.Lora
                             loraToUpdate.receipt_rv = txtRv.Text;
                             loraToUpdate.plate = havePlate; // 'havePlate' is a variable from addPlate()
                             loraToUpdate.note = txtNote.Text;
+                            loraToUpdate.ref_user = Settings.Default.audit_user; // Assuming you want to track the user who made the update
+
+                            loraToUpdate.taken_date = DateTime.Now; // Assuming you want to set the taken date when marking as deleted
 
                             if (plateToUpdate != null)
                             {
                                 plateToUpdate.status = status;
                                 plateToUpdate.refference = txtRefference.Text;
                                 plateToUpdate.date = DateTime.Now;
+                                loraToUpdate.ref_user = Settings.Default.audit_user; // Assuming you want to track the user who made the update
                             }
 
                             // 4. Save changes to the database
@@ -205,12 +216,16 @@ namespace fortest.Lora
                             loraToUpdate.receipt_rv = txtRv.Text;
                             loraToUpdate.plate = havePlate; // 'havePlate' is a variable from addPlate()
                             loraToUpdate.note = txtNote.Text;
+                            loraToUpdate.ref_user = Settings.Default.audit_user; // Assuming you want to track the user who made the update
+                            loraToUpdate.if_deleted = "Yes"; // Mark as deleted
 
                             if (plateToUpdate != null)
                             {
                                 plateToUpdate.status = status;
                                 plateToUpdate.refference = txtRefference.Text;
                                 plateToUpdate.date = DateTime.Now;
+                                plateToUpdate.if_deleted = "Yes"; // Mark as deleted
+                                plateToUpdate.ref_user = Settings.Default.audit_user; // Assuming you want to track the user who made the update
                             }
 
                             // 4. Save changes to the database

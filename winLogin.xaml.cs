@@ -32,6 +32,7 @@ namespace fortest
                     var user = context.TblUser.FirstOrDefault(u => u.userName == username && u.passWord == password);
                     if (user != null)
                     {
+                        Settings.Default.audit_user = user.userName;
                         // User found, proceed with login
                         MessageBox.Show("Login successful!");
                         MainWindow dashboard = new MainWindow();

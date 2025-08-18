@@ -110,7 +110,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Welcome to Lora Reference Management" Foreground="{StaticResource LightTextColor}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                <Button Content="Refresh" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource RefreshButtonStyle}"/>
+                <Button Content="Refresh" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource RefreshButtonStyle}" Click="Button_Click"/>
             </Grid>
         </Border>
 
@@ -145,7 +145,7 @@
                 </StackPanel>
             </GroupBox>
 
-            <DataGrid Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding}" AutoGenerateColumns="True" Name="dgvLora"/>
+            <DataGrid Grid.Row="1" MouseDoubleClick="dgvLora_MouseDoubleClick" IsReadOnly="True" ItemsSource="{Binding}" AutoGenerateColumns="True" Name="dgvLora" SelectionChanged="dgvLora_SelectionChanged" ColumnWidth="*"/>
         </Grid>
     </Grid>
 </UserControl>

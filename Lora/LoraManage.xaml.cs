@@ -15,61 +15,24 @@ namespace fortest
         {
             InitializeComponent();
         }
+
+        private void loadData()
+        {
+            // This method should load data from the database into _loraDataCollection
+            // For example, using a service to fetch data
+            using (var context = new MyDbContext())
+            {
+                _loraDataCollection = context.tblLora.Where(l=>l.if_deleted!="YES").ToList();
+            }
+            // Bind the loaded data to the DataGrid or any other UI control
+            dgvLora.ItemsSource = _loraDataCollection;
+        }
+
         private List<tblLora> _loraDataCollection = new List<tblLora>();
 
         public void filterData()
         {
-            // 1. Initialize the query with the full dataset to avoid NullReferenceException.
-            IEnumerable<tblLora> query = _loraDataCollection;
 
-            // --- Apply filters based on user selections ---
-
-            // Filter by ComboBox (cmbFilter1)
-            if (cmbFilter1.SelectedItem is ComboBoxItem selectedItem)
-            {
-                string filterValue = selectedItem.Content.ToString();
-                if (!string.IsNullOrEmpty(filterValue))
-                {
-                    query = query.Where(lora => lora.status == filterValue);
-                }
-            }
-
-            // Filter by Date Range (dpStartDate and dpEndDate)
-            if (dpStartDate.SelectedDate.HasValue && dpEndDate.SelectedDate.HasValue)
-            {
-                DateTime startDate = dpStartDate.SelectedDate.Value.Date;
-                DateTime endDate = dpEndDate.SelectedDate.Value.Date;
-
-                query = query.Where(lora => lora.date >= startDate && lora.date <= endDate);
-            }
-            else if (dpStartDate.SelectedDate.HasValue)
-            {
-                DateTime startDate = dpStartDate.SelectedDate.Value.Date;
-                query = query.Where(lora => lora.date >= startDate);
-            }
-            else if (dpEndDate.SelectedDate.HasValue)
-            {
-                DateTime endDate = dpEndDate.SelectedDate.Value.Date;
-                query = query.Where(lora => lora.date <= endDate);
-            }
-
-            // Convert the query to a list to check for results
-            var filteredData = query.ToList();
-
-            // 2. Check the result count and update visibility
-            if (filteredData.Any())
-            {
-                // Data found: Show the DataGrid, hide the message
-                dgvLora.Visibility = Visibility.Visible;
-                //txtNoData.Visibility = Visibility.Collapsed;
-                dgvLora.ItemsSource = filteredData;
-            }
-            else
-            {
-                // No data found: Hide the DataGrid, show the message
-                dgvLora.Visibility = Visibility.Collapsed;
-                //txtNoData.Visibility = Visibility.Visible;
-            }
         }
 
         // Event handlers for your UI controls
@@ -110,6 +73,44 @@ namespace fortest
         {
             RegLora regLora = new RegLora();
             regLora.ShowDialog();
+        }
+
+        private void dgvLora_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void dgvLora_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            EditLora editLora = new EditLora();
+            if (dgvLora.SelectedItem is tblLora selectedLora)
+            {
+                editLora.DataContext = selectedLora; // Bind the selected Lora data to the EditLora window
+                editLora.txtLora_id.Text = selectedLora.lora_id.ToString();
+                editLora.txtSupply.Text = selectedLora.cor_supply;
+                editLora.txtRefference.Text = selectedLora.refference;
+                editLora.txtSerial.Text = selectedLora.lora_serial;
+                editLora.txtRv.Text = selectedLora.receipt_rv;
+                editLora.txtNote.Text = selectedLora.note;
+                editLora.chbPlate.IsChecked = (selectedLora.plate == "YES");
+                editLora.chbStatus.IsChecked = (selectedLora.status=="Taken");
+                //editLora.chbPlate.IsChecked = selectedLora.plate;
+                //editLora.txtAssignedTo.Text = selectedLora.assigned_to;
+                //editLora.txtTakenDate.Text = selectedLora.taken_date?.ToString("yyyy-MM-dd") ?? string.Empty;
+                //editLora.txtDate.Text = selectedLora.date?.ToString("yyyy-MM-dd") ?? string.Empty;
+                //editLora.txtRefUser.Text = selectedLora.ref_user;
+
+                editLora.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a Lora to edit.");
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            loadData();
         }
     }
 }

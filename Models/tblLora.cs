@@ -45,12 +45,16 @@ public partial class tblLora
     [StringLength(150)]
     public string? note { get; set; }
 
-    [Column("users")]
-    [StringLength(50)]
-    public string? users { get; set; }
+    [Column("ref_user")]
+    [StringLength(100)]
+    public string? ref_user { get; set; }
 
     [Column("assigned_to")]
     [StringLength(50)]
     public string? assigned_to { get; set; }
+
+    [Column("if_deleted ")]
+    [StringLength(10)]
+    public string? if_deleted { get; set; }
 }
 

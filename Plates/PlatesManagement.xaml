@@ -34,7 +34,7 @@
                 <Button Grid.Column="4" Content="Refresh" HorizontalAlignment="Right"/>
             </Grid>
 
-            <DataGrid Grid.Row="1" AutoGenerateColumns="True" CanUserAddRows="False" Name="dgvPlate">
+            <DataGrid Grid.Row="1" AutoGenerateColumns="True" CanUserAddRows="False" Name="dgvPlate" ColumnWidth="*">
                 <DataGrid.Columns>
                 </DataGrid.Columns>
             </DataGrid>

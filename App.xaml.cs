@@ -37,7 +37,9 @@ namespace fortest
                     startupWindow = new winLogin();
                 }
 
-                startupWindow.Show();
+                //startupWindow.Show();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
             }
             catch (Exception ex)
             {
