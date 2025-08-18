@@ -28,5 +28,17 @@ namespace fortest.Lora
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

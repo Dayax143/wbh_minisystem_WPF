@@ -10,14 +10,12 @@
         WindowStartupLocation="CenterScreen"
         Background="#F5F5F5">
     <Window.Resources>
-        <!-- Style for all Labels -->
         <Style TargetType="Label">
             <Setter Property="Margin" Value="0,5,10,5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="#333333"/>
         </Style>
 
-        <!-- Style for all TextBoxes and PasswordBoxes -->
         <Style TargetType="{x:Type Control}">
             <Setter Property="Width" Value="300"/>
             <Setter Property="Height" Value="36"/>
@@ -32,7 +30,6 @@
             <Setter Property="FontSize" Value="14"/>
         </Style>
 
-        <!-- Style for the buttons -->
         <Style TargetType="Button">
             <Setter Property="Width" Value="150"/>
             <Setter Property="Height" Value="36"/>
@@ -52,7 +49,6 @@
             </Setter>
         </Style>
 
-        <!-- Primary button style (Save, Continue) -->
         <Style x:Key="PrimaryButtonStyle" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
             <Setter Property="Background" Value="#4CAF50"/>
             <Style.Triggers>
@@ -62,7 +58,6 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Secondary button style (Test, Browse, Restore) -->
         <Style x:Key="SecondaryButtonStyle" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
             <Setter Property="Background" Value="#9E9E9E"/>
             <Style.Triggers>
@@ -72,7 +67,6 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Tertiary/Cautionary button style (Reset) -->
         <Style x:Key="TertiaryButtonStyle" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
             <Setter Property="Background" Value="#E74C3C"/>
             <Style.Triggers>
@@ -183,6 +177,48 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                             <Button Content="Test Connection" Width="130" Style="{StaticResource SecondaryButtonStyle}" Click="TestConnection_Click" />
                             <Button Content="Continue" Width="100" Style="{StaticResource PrimaryButtonStyle}" Click="Continue_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="Oracle" Height="24" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                    <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <TextBlock Text="Oracle Database Configuration"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,20"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#333333"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Label Content="Data Source (TNS):" Grid.Row="0" Grid.Column="0"/>
+                            <TextBox Name="txtOracleDataSource" Grid.Row="0" Grid.Column="1"/>
+
+                            <Label Content="Username:" Grid.Row="1" Grid.Column="0"/>
+                            <TextBox Name="txtOracleUsername" Grid.Row="1" Grid.Column="1"/>
+
+                            <Label Content="Password:" Grid.Row="2" Grid.Column="0"/>
+                            <PasswordBox Name="txtOraclePassword" Grid.Row="2" Grid.Column="1"/>
+
+                            <Label Content="Port:" Grid.Row="3" Grid.Column="0"/>
+                            <TextBox Name="txtOraclePort" Grid.Row="3" Grid.Column="1"/>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                            <Button Content="Save Configuration" Style="{StaticResource PrimaryButtonStyle}" Name="btnSaveOracleConfig" Click="btnSaveOracleConfig_Click"/>
+                            <Button Content="Test Connection" Style="{StaticResource SecondaryButtonStyle}" Name="btnTestOracleCon" Click="btnTestOracleCon_Click"/>
+                            <Button Content="Continue" Style="{StaticResource PrimaryButtonStyle}" Name="btnOracleContinue" Click="btnOracleContinue_Click"/>
                         </StackPanel>
                     </StackPanel>
                 </TabItem>

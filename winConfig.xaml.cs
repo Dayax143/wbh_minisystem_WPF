@@ -111,9 +111,25 @@ namespace fortest
         private void btnSaveSQLConfig_Click(object sender, RoutedEventArgs e)
 		{
 			string newConnectionString = $"Data source={txtServerName.Text}; Initial Catalog={txtDatabaseName.Text}; User ID={txtUsername.Text}; Password={txtPassword.Password}; trustservercertificate=true;";
-
 			// Save the connection string to application settings
 			connectionClass.ConfigureConnection(newConnectionString);
+        }
+
+        private void btnSaveOracleConfig_Click(object sender, RoutedEventArgs e)
+        {
+            string fullTnsDescriptor = $"(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={txtOracleDataSource.Text})(PORT={txtOraclePort.Text}))(CONNECT_DATA=(SERVICE_NAME={txtOracleDataSource.Text})))";
+            string newConnectionString = $"Data Source={fullTnsDescriptor};User ID={txtOracleUsername.Text};Password={txtOraclePassword.Password};";
+            connectionClass.ConfigureConnection(newConnectionString);
+        }
+
+        private void btnTestOracleCon_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnOracleContinue_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
