@@ -53,7 +53,7 @@ namespace fortest.Plates {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/fortest;component/plates/regplate.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/fortest;V1.0.0.0;component/plates/regplate.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Plates\RegPlate.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -117,7 +117,7 @@ namespace fortest.Lora {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/fortest;component/lora/editlora.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/fortest;V1.0.0.0;component/lora/editlora.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Lora\EditLora.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

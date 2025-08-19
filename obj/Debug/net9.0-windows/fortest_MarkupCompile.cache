@@ -4,16 +4,21 @@
 winexe
 C#
 .cs
-F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\
+D:\Software Development\FOR HWA (ensure be in git)\wbh_minisystem_WPF\obj\Debug\net9.0-windows\
 fortest
 none
 false
-TRACE;DEBUG;NET;NET9_0;NETCOREAPP
-F:\Software Development\HWA DEV\fortest\App.xaml
+TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+D:\Software Development\FOR HWA (ensure be in git)\wbh_minisystem_WPF\App.xaml
 11-234454692
 
+<<<<<<< HEAD
 31-1048458245
 230-23840818
+=======
+311962655452
+229-1922458817
+>>>>>>> 4fa392265099729a6024549a2092d8a1510cf0c0
 Lora\EditLora.xaml;Lora\LoraManage.xaml;Lora\RegLora.xaml;MainWindow.xaml;Plates\PlatesManagement.xaml;Plates\RegPlate.xaml;User\RegSignup.xaml;User\RegUser.xaml;User\UserManage.xaml;winConfig.xaml;winLogin.xaml;
 
 False

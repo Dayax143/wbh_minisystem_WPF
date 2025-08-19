@@ -53,7 +53,7 @@ namespace fortest.User {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/fortest;component/user/reguser.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/fortest;V1.0.0.0;component/user/reguser.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\User\RegUser.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
