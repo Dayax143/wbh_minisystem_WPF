@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "9.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
-          "Microsoft.EntityFrameworkCore.Tools": "9.0.8"
+          "Microsoft.EntityFrameworkCore.Tools": "9.0.8",
+          "Oracle.ManagedDataAccess": "23.9.1"
         },
         "runtime": {
           "fortest.dll": {}
@@ -20,12 +21,12 @@
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "7.0.0",
           "System.ClientModel": "1.0.0",
-          "System.Diagnostics.DiagnosticSource": "6.0.1",
+          "System.Diagnostics.DiagnosticSource": "6.0.2",
           "System.Memory.Data": "1.0.2",
           "System.Numerics.Vectors": "4.5.0",
           "System.Text.Encodings.Web": "6.0.0",
           "System.Text.Json": "9.0.8",
-          "System.Threading.Tasks.Extensions": "4.5.4"
+          "System.Threading.Tasks.Extensions": "4.6.0"
         },
         "runtime": {
           "lib/net6.0/Azure.Core.dll": {
@@ -39,10 +40,10 @@
           "Azure.Core": "1.38.0",
           "Microsoft.Identity.Client": "4.61.3",
           "Microsoft.Identity.Client.Extensions.Msal": "4.61.3",
-          "System.Memory": "4.5.4",
+          "System.Memory": "4.6.0",
           "System.Security.Cryptography.ProtectedData": "6.0.0",
           "System.Text.Json": "9.0.8",
-          "System.Threading.Tasks.Extensions": "4.5.4"
+          "System.Threading.Tasks.Extensions": "4.6.0"
         },
         "runtime": {
           "lib/netstandard2.0/Azure.Identity.dll": {
@@ -365,7 +366,7 @@
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.35.0",
           "Microsoft.SqlServer.Server": "1.0.0",
           "System.Configuration.ConfigurationManager": "6.0.1",
-          "System.Diagnostics.DiagnosticSource": "6.0.1",
+          "System.Diagnostics.DiagnosticSource": "6.0.2",
           "System.Runtime.Caching": "6.0.0",
           "System.Security.Cryptography.Cng": "5.0.0",
           "System.Security.Principal.Windows": "5.0.0",
@@ -610,7 +611,7 @@
       "Microsoft.Identity.Client/4.61.3": {
         "dependencies": {
           "Microsoft.IdentityModel.Abstractions": "6.35.0",
-          "System.Diagnostics.DiagnosticSource": "6.0.1"
+          "System.Diagnostics.DiagnosticSource": "6.0.2"
         },
         "runtime": {
           "lib/net6.0/Microsoft.Identity.Client.dll": {
@@ -723,6 +724,21 @@
           }
         }
       },
+      "Oracle.ManagedDataAccess/23.9.1": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "6.0.2",
+          "System.Formats.Asn1": "9.0.8",
+          "System.Memory": "4.6.0",
+          "System.Text.Json": "9.0.8",
+          "System.Threading.Tasks.Extensions": "4.6.0"
+        },
+        "runtime": {
+          "lib/net472/Oracle.ManagedDataAccess.dll": {
+            "assemblyVersion": "4.122.23.1",
+            "fileVersion": "4.122.23.1"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "dependencies": {
           "System.Memory.Data": "1.0.2",
@@ -803,11 +819,7 @@
           "System.Security.Permissions": "6.0.0"
         }
       },
-      "System.Diagnostics.DiagnosticSource/6.0.1": {
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        }
-      },
+      "System.Diagnostics.DiagnosticSource/6.0.2": {},
       "System.Drawing.Common/6.0.0": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "6.0.0"
@@ -834,7 +846,7 @@
         }
       },
       "System.IO.Pipelines/7.0.0": {},
-      "System.Memory/4.5.4": {},
+      "System.Memory/4.6.0": {},
       "System.Memory.Data/1.0.2": {
         "dependencies": {
           "System.Text.Encodings.Web": "6.0.0",
@@ -919,7 +931,7 @@
         }
       },
       "System.Threading.Channels/7.0.0": {},
-      "System.Threading.Tasks.Extensions/4.5.4": {},
+      "System.Threading.Tasks.Extensions/4.6.0": {},
       "System.Windows.Extensions/6.0.0": {
         "dependencies": {
           "System.Drawing.Common": "6.0.0"
@@ -1248,6 +1260,13 @@
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
     },
+    "Oracle.ManagedDataAccess/23.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/4v/a6P6u+VLixps0TGH8js/1ZYS7vVll+j0J9RsUQLRPYgzXs1Mt+xi1XqFZP5PzMA5H0kgW/3EMosj+fYReA==",
+      "path": "oracle.manageddataaccess/23.9.1",
+      "hashPath": "oracle.manageddataaccess.23.9.1.nupkg.sha512"
+    },
     "System.ClientModel/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1318,12 +1337,12 @@
       "path": "system.configuration.configurationmanager/6.0.1",
       "hashPath": "system.configuration.configurationmanager.6.0.1.nupkg.sha512"
     },
-    "System.Diagnostics.DiagnosticSource/6.0.1": {
+    "System.Diagnostics.DiagnosticSource/6.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
-      "path": "system.diagnostics.diagnosticsource/6.0.1",
-      "hashPath": "system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512"
+      "sha512": "sha512-6tQaIexFycaotdGn23lf3XJ/eI1GOjQKIvQDRFN9N4pwoNsKnHuXccQ3lnQO6GX8KAb1ic+6ZofJmPdbUVwZag==",
+      "path": "system.diagnostics.diagnosticsource/6.0.2",
+      "hashPath": "system.diagnostics.diagnosticsource.6.0.2.nupkg.sha512"
     },
     "System.Drawing.Common/6.0.0": {
       "type": "package",
@@ -1353,12 +1372,12 @@
       "path": "system.io.pipelines/7.0.0",
       "hashPath": "system.io.pipelines.7.0.0.nupkg.sha512"
     },
-    "System.Memory/4.5.4": {
+    "System.Memory/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
-      "path": "system.memory/4.5.4",
-      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+      "sha512": "sha512-OEkbBQoklHngJ8UD8ez2AERSk2g+/qpAaSWWCBFbpH727HxDq5ydVkuncBaKcKfwRqXGWx64dS6G1SUScMsitg==",
+      "path": "system.memory/4.6.0",
+      "hashPath": "system.memory.4.6.0.nupkg.sha512"
     },
     "System.Memory.Data/1.0.2": {
       "type": "package",
@@ -1472,12 +1491,12 @@
       "path": "system.threading.channels/7.0.0",
       "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
     },
-    "System.Threading.Tasks.Extensions/4.5.4": {
+    "System.Threading.Tasks.Extensions/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
-      "path": "system.threading.tasks.extensions/4.5.4",
-      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+      "sha512": "sha512-I5G6Y8jb0xRtGUC9Lahy7FUvlYlnGMMkbuKAQBy8Jb7Y6Yn8OlBEiUOY0PqZ0hy6Ua8poVA1ui1tAIiXNxGdsg==",
+      "path": "system.threading.tasks.extensions/4.6.0",
+      "hashPath": "system.threading.tasks.extensions.4.6.0.nupkg.sha512"
     },
     "System.Windows.Extensions/6.0.0": {
       "type": "package",

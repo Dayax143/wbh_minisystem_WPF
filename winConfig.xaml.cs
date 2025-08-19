@@ -2,6 +2,7 @@
 using fortest.Services;
 using Microsoft.Data.SqlClient;
 using Microsoft.Win32;
+using Oracle.ManagedDataAccess.Client;
 using System.Data.OleDb;
 using System.IO;
 using System.Windows;
@@ -124,7 +125,22 @@ namespace fortest
 
         private void btnTestOracleCon_Click(object sender, RoutedEventArgs e)
         {
+            // The following methods would be placed in your main window's code-behind file (e.g., winConfig.xaml.cs)
 
+            try
+            {
+                string newConnectionString = $"Data Source={txtOracleDataSource.Text};User ID={txtOracleUsername.Text};Password={txtOraclePassword.Password};";
+                
+                using (var con = new OracleConnection(newConnectionString))
+                {
+                    con.Open();
+                    MessageBox.Show("Oracle connection successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Oracle connection failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnOracleContinue_Click(object sender, RoutedEventArgs e)

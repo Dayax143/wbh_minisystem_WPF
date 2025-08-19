@@ -34,7 +34,7 @@ namespace fortest.Lora
             {
                 // Assume select_status() sets the 'status' and 'supply' variables
                 string status = chbStatus.IsChecked == true ? "Taken" : "Pending";
-                string havePlate = chbStatus.IsChecked == true ? "YES" : "NO";
+                string havePlate = chbPlate.IsChecked == true ? "YES" : "NO";
 
                 if (chbStatus.IsChecked==true && string.IsNullOrEmpty(txtRefference.Text))
                 {
@@ -111,7 +111,7 @@ namespace fortest.Lora
 
             // 1. Get the status based on the checkbox.
             string status = chbStatus.IsChecked == true ? "Taken" : "Pending";
-            string havePlate = chbStatus.IsChecked == true ? "YES" : "NO";
+            string havePlate = chbPlate.IsChecked == true ? "YES" : "NO";
 
             // Using System.Windows.MessageBox
             var confirm = MessageBox.Show(message, title, MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -178,13 +178,13 @@ namespace fortest.Lora
         }
 
         public void delete()
-        {
-            // 1. Show a confirmation dialog
+        {// 1. Show a confirmation dialog
             string message = "Are you sure you want to update this record?";
             string title = "Confirmation";
+
             // 1. Get the status based on the checkbox.
             string status = chbStatus.IsChecked == true ? "Taken" : "Pending";
-            string havePlate = chbStatus.IsChecked == true ? "YES" : "NO";
+            string havePlate = chbPlate.IsChecked == true ? "YES" : "NO";
 
             // Using System.Windows.MessageBox
             var confirm = MessageBox.Show(message, title, MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -207,25 +207,16 @@ namespace fortest.Lora
 
                         if (loraToUpdate != null)
                         {
-                            // 3. Update properties on the tracked entities
-                            loraToUpdate.cor_supply = supply;
-                            loraToUpdate.status = status; // 'status' is a variable from select_status()
                             loraToUpdate.date = DateTime.Now;
-                            loraToUpdate.refference = txtRefference.Text;
-                            loraToUpdate.lora_serial = txtSerial.Text;
-                            loraToUpdate.receipt_rv = txtRv.Text;
-                            loraToUpdate.plate = havePlate; // 'havePlate' is a variable from addPlate()
-                            loraToUpdate.note = txtNote.Text;
                             loraToUpdate.ref_user = Settings.Default.audit_user; // Assuming you want to track the user who made the update
-                            loraToUpdate.if_deleted = "Yes"; // Mark as deleted
+                            loraToUpdate.if_deleted = "YES"; // Mark as deleted
+                            loraToUpdate.taken_date = DateTime.Now; // Assuming you want to set the taken date when marking as deleted
 
                             if (plateToUpdate != null)
                             {
-                                plateToUpdate.status = status;
-                                plateToUpdate.refference = txtRefference.Text;
+                                plateToUpdate.if_deleted = "YES"; // Mark the plate as deleted
                                 plateToUpdate.date = DateTime.Now;
-                                plateToUpdate.if_deleted = "Yes"; // Mark as deleted
-                                plateToUpdate.ref_user = Settings.Default.audit_user; // Assuming you want to track the user who made the update
+                                loraToUpdate.ref_user = Settings.Default.audit_user; // Assuming you want to track the user who made the update
                             }
 
                             // 4. Save changes to the database
@@ -245,6 +236,7 @@ namespace fortest.Lora
                 catch (Exception ex)
                 {
                     MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(ex.Source);
                 }
             }
         }

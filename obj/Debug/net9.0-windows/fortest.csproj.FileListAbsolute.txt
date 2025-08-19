@@ -162,3 +162,4 @@ F:\Software Development\HWA DEV\fortest\bin\Debug\net9.0-windows\fortest.dll.con
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\User\RegSignup.baml
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\winConfig.baml
 F:\Software Development\HWA DEV\fortest\obj\Debug\net9.0-windows\winLogin.baml
+F:\Software Development\HWA DEV\fortest\bin\Debug\net9.0-windows\Oracle.ManagedDataAccess.dll

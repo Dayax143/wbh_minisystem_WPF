@@ -140,7 +140,6 @@
 
                     <Button Content="Today" Style="{StaticResource SearchButtonStyle}" x:Name="btnToday"/>
                     <Button Content="Pending" Style="{StaticResource SearchButtonStyle}" x:Name="btnPending"/>
-                    <Button Content="Report" Style="{StaticResource ReportButtonStyle}" x:Name="btnReport" Click="btnReport_Click"/>
                     <Button Content="Add New Lora" Style="{StaticResource AddNewButtonStyle}" x:Name="btnAddNewLora" Click="btnAddNewLora_Click"/>
                 </StackPanel>
             </GroupBox>

@@ -11,7 +11,7 @@ namespace fortest.Services
 {
     public class MyDbContext: DbContext
     {
-        //"Server=172.16.168.212;Database=wbh_minisystem;User Id=sa;Password=123; trustservercertificate=true;"
+        //string connectionString = "Data source=172.16.168.212; initial catalog=wbh_minisystem0; user id=sa; password=123; trustservercertificate=true";
         string connectionString = Properties.Settings.Default.ConnectionString;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -66,6 +66,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.8, )"
+            },
+            "Oracle.ManagedDataAccess": {
+              "target": "Package",
+              "version": "[23.9.1, )"
             }
           },
           "imports": [

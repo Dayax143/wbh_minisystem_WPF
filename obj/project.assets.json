@@ -981,6 +981,22 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "Oracle.ManagedDataAccess/23.9.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "6.0.2",
+          "System.Formats.Asn1": "8.0.1",
+          "System.Memory": "4.6.0",
+          "System.Text.Json": "8.0.5",
+          "System.Threading.Tasks.Extensions": "4.6.0"
+        },
+        "compile": {
+          "lib/net472/Oracle.ManagedDataAccess.dll": {}
+        },
+        "runtime": {
+          "lib/net472/Oracle.ManagedDataAccess.dll": {}
+        }
+      },
       "System.ClientModel/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1160,11 +1176,8 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/6.0.1": {
+      "System.Diagnostics.DiagnosticSource/6.0.2": {
         "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
         "compile": {
           "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
@@ -1211,7 +1224,7 @@
       "System.Formats.Asn1/9.0.8": {
         "type": "package",
         "compile": {
-          "lib/net9.0/_._": {
+          "lib/net9.0/System.Formats.Asn1.dll": {
             "related": ".xml"
           }
         },
@@ -1257,10 +1270,10 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Memory/4.5.4": {
+      "System.Memory/4.6.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp2.1/_._": {}
+          "lib/netcoreapp2.1/_._": {}
         },
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
@@ -1568,10 +1581,10 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.4": {
+      "System.Threading.Tasks.Extensions/4.6.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp2.1/_._": {}
+          "lib/netcoreapp2.1/_._": {}
         },
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
@@ -3516,6 +3529,33 @@
         "readme.md"
       ]
     },
+    "Oracle.ManagedDataAccess/23.9.1": {
+      "sha512": "/4v/a6P6u+VLixps0TGH8js/1ZYS7vVll+j0J9RsUQLRPYgzXs1Mt+xi1XqFZP5PzMA5H0kgW/3EMosj+fYReA==",
+      "type": "package",
+      "path": "oracle.manageddataaccess/23.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PerfCounters/register_odpm_perfmon_counters.ps1",
+        "PerfCounters/unregister_odpm_perfmon_counters.ps1",
+        "README.md",
+        "bin/x64/Oracle.ManagedDataAccessIOP.dll",
+        "content/net472/App.config.install.xdt",
+        "content/net472/App.config.transform",
+        "content/net472/App.config.uninstall.xdt",
+        "content/net472/Oracle.DataAccess.Common.Configuration.Section.xsd",
+        "content/net472/Oracle.ManagedDataAccess.Client.Configuration.Section.xsd",
+        "content/net472/Web.config.install.xdt",
+        "content/net472/Web.config.transform",
+        "content/net472/Web.config.uninstall.xdt",
+        "info.txt",
+        "lib/net472/Oracle.ManagedDataAccess.dll",
+        "oracle.manageddataaccess.23.9.1.nupkg.sha512",
+        "oracle.manageddataaccess.nuspec",
+        "oracle.png"
+      ]
+    },
     "System.ClientModel/1.0.0": {
       "sha512": "I3CVkvxeqFYjIVEP59DnjbeoGNfo/+SZrCLpRz2v/g0gpCHaEMPtWSY0s9k/7jR1rAsLNg2z2u1JRB76tPjnIw==",
       "type": "package",
@@ -3767,10 +3807,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/6.0.1": {
-      "sha512": "KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
+    "System.Diagnostics.DiagnosticSource/6.0.2": {
+      "sha512": "6tQaIexFycaotdGn23lf3XJ/eI1GOjQKIvQDRFN9N4pwoNsKnHuXccQ3lnQO6GX8KAb1ic+6ZofJmPdbUVwZag==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/6.0.1",
+      "path": "system.diagnostics.diagnosticsource/6.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3787,7 +3827,7 @@
         "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.6.0.2.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3909,27 +3949,24 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Memory/4.5.4": {
-      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+    "System.Memory/4.6.0": {
+      "sha512": "OEkbBQoklHngJ8UD8ez2AERSk2g+/qpAaSWWCBFbpH727HxDq5ydVkuncBaKcKfwRqXGWx64dS6G1SUScMsitg==",
       "type": "package",
-      "path": "system.memory/4.5.4",
+      "path": "system.memory/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Memory.dll",
-        "lib/net461/System.Memory.xml",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Memory.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Memory.dll",
+        "lib/net462/System.Memory.xml",
         "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.4.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "system.memory.4.6.0.nupkg.sha512",
+        "system.memory.nuspec"
       ]
     },
     "System.Memory.Data/1.0.2": {
@@ -4642,41 +4679,24 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Threading.Tasks.Extensions/4.5.4": {
-      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+    "System.Threading.Tasks.Extensions/4.6.0": {
+      "sha512": "I5G6Y8jb0xRtGUC9Lahy7FUvlYlnGMMkbuKAQBy8Jb7Y6Yn8OlBEiUOY0PqZ0hy6Ua8poVA1ui1tAIiXNxGdsg==",
       "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.4",
+      "path": "system.threading.tasks.extensions/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Threading.Tasks.Extensions.dll",
-        "lib/net461/System.Threading.Tasks.Extensions.xml",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Threading.Tasks.Extensions.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Threading.Tasks.Extensions.dll",
+        "lib/net462/System.Threading.Tasks.Extensions.xml",
         "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
         "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
         "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netcoreapp2.1/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-        "system.threading.tasks.extensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "system.threading.tasks.extensions.4.6.0.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec"
       ]
     },
     "System.Windows.Extensions/6.0.0": {
@@ -4707,7 +4727,8 @@
     "net9.0-windows7.0": [
       "Microsoft.EntityFrameworkCore.Design >= 9.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.8",
-      "Microsoft.EntityFrameworkCore.Tools >= 9.0.8"
+      "Microsoft.EntityFrameworkCore.Tools >= 9.0.8",
+      "Oracle.ManagedDataAccess >= 23.9.1"
     ]
   },
   "packageFolders": {
@@ -4776,6 +4797,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[9.0.8, )"
+          },
+          "Oracle.ManagedDataAccess": {
+            "target": "Package",
+            "version": "[23.9.1, )"
           }
         },
         "imports": [
@@ -4800,5 +4825,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Oracle.ManagedDataAccess 23.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Oracle.ManagedDataAccess",
+      "targetGraphs": [
+        "net9.0-windows7.0"
+      ]
+    }
+  ]
 }
